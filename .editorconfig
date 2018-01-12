@@ -18,8 +18,12 @@ max_line_length = 80
 [*.rb]
 indent_size = 2
 
-# Use 2 spaces for the Ruby files
+# Use 2 spaces for the JS files
 [*.js]
+indent_size = 2
+
+# Use 2 spaces for the css files
+[*.css]
 indent_size = 2
 
 # The JSON files contain newlines inconsistently
