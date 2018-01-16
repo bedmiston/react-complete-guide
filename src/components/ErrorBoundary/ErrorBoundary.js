@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class ErrorBoundary extends Component {
   state = {
     hasError: false,
     errorMessage: ''
-  }
+  };
 
   componentDidCatch = (error, info) => {
     this.setState({
       hasError: true,
       errorMessage: error
     });
-  }
+  };
 
   render() {
     if (this.state.hasError) {
@@ -19,7 +19,6 @@ class ErrorBoundary extends Component {
     } else {
       return this.props.children;
     }
-
   }
 }
 
