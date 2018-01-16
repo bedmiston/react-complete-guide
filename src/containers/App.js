@@ -21,11 +21,11 @@ class App extends Component {
     persons: [
       { id: 'sadf', name: 'Max', age: 28 },
       { id: 'erg', name: 'Manu', age: 29 },
-      { id: 'asdfas', name: 'Stephanie', age: 26 },
+      { id: 'asdfas', name: 'Stephanie', age: 26 }
     ],
     otherState: 'Some other value',
     showPersons: false
-  }
+  };
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
@@ -44,18 +44,18 @@ class App extends Component {
     this.setState({
       persons: persons
     });
-  }
+  };
 
-  deletePersonHandler = (personIndex) => {
+  deletePersonHandler = personIndex => {
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({ persons: persons });
-  }
+  };
 
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
     this.setState({ showPersons: !doesShow });
-  }
+  };
 
   render() {
     console.log('[App.js] Inside render');
@@ -63,11 +63,12 @@ class App extends Component {
 
     if (this.state.showPersons) {
       persons = (
-        <div >
+        <div>
           <Persons
             persons={this.state.persons}
             clicked={this.deletePersonHandler}
-            changed={this.nameChangedHandler} />
+            changed={this.nameChangedHandler}
+          />
         </div>
       );
     }
@@ -78,9 +79,10 @@ class App extends Component {
           appTitle={this.props.title}
           showPersons={this.state.showPersons}
           persons={this.state.persons}
-          clicked={this.togglePersonsHandler} />
+          clicked={this.togglePersonsHandler}
+        />
         {persons}
-      </div >
+      </div>
     );
   }
 }
